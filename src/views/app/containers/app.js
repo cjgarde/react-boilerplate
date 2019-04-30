@@ -25,7 +25,7 @@ class App extends Component {
           <Route exact path="/:tab" component={Layout} />
           <Redirect
             from="/"
-            to={ROUTES.DASHBOARD.MAIN} />
+            to={ROUTES.ROUTE_1.PATH} />
         </Switch>
       </div>
     );
