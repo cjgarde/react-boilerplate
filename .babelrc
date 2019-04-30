@@ -1,0 +1,18 @@
+{
+  "presets": [[
+    "@babel/preset-env", {
+      "useBuiltIns": "usage",
+      "targets": {
+        "chrome": "60",
+        "safari": "10",
+        "ios": "10"
+      }
+    }],
+    "@babel/preset-react"],
+  "plugins": [
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-proposal-export-default-from",
+    "react-hot-loader/babel"
+  ],
+  "sourceType": "unambiguous"
+}
