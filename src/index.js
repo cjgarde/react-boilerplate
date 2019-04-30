@@ -8,4 +8,4 @@ import './styles/_mixins.scss';
 import './styles/_app.scss';
 import './styles/theme.scss';
 
-ReactDom.render(<Root />, document.getElementById('root'));
+ReactDom.render(<Root />, document.getElementById('i3-root'));

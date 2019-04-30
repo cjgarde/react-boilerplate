@@ -19,8 +19,8 @@ import './app.scss';
 class App extends Component {
   render() {
     return (
-      <div className="i3-ww-app">
-        <div className="i3-ww-popups" />
+      <div className="i3-app">
+        <div className="i3-popups" />
         <Switch>
           <Route exact path="/:tab" component={Layout} />
           <Redirect
