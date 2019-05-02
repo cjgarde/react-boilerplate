@@ -7,6 +7,8 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const merge = require('webpack-merge');
 const common = require('./webpack.config.js');
+// Minify and uglify plugin
+const TerserPlugin = require('terser-webpack-plugin');
 
 // some libraries look for process.env.NODE_ENV to optimize and webpack doesn't include it
 const environmentPlugin = new webpack.DefinePlugin({
@@ -18,10 +20,15 @@ const miniCssExtractPlugin = new MiniCssExtractPlugin({
 });
 
 module.exports = merge(common, {
-  devtool: 'source-map',
+  devtool: 'cheap-source-map',
   mode: 'production',
   optimization: {
     minimizer: [
+      new TerserPlugin({
+        test: /\.js(\?.*)?$/i,
+        parallel: true,
+        extractComments: true,
+      }),
       new OptimizeCSSAssetsPlugin({}),
     ],
     // separate in a file called vendors.js all used in node_modules
@@ -33,7 +40,7 @@ module.exports = merge(common, {
           chunks: 'all',
         },
       },
-    }, */
+    },*/
     runtimeChunk: 'single',
     splitChunks: {
       chunks: 'all',
