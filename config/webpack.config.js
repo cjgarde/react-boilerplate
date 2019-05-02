@@ -15,6 +15,7 @@ const cleanWebPackPlugin = new CleanWebpackPlugin();
 const htmlWebpackPlugin = new HtmlWebpackPlugin({
   template: srcPath + 'index.html',
   filename: 'index.html',
+  favicon: staticPath + '/images/react.ico'
 });
 
 module.exports = {
@@ -93,9 +94,9 @@ module.exports = {
       }],
   },
   plugins: [
-    new webpack.ProgressPlugin( (percentage, message, ...args) => {
+    /* new webpack.ProgressPlugin( (percentage, message, ...args) => {
       console.info(percentage, message, ...args);
-    }),
+    }),*/
     cleanWebPackPlugin,
     htmlWebpackPlugin,
   ],
