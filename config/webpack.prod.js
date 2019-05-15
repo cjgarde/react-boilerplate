@@ -5,10 +5,10 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 // to analyze the weight of the bundle visually
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-const merge = require('webpack-merge');
-const common = require('./webpack.config.js');
 // Minify and uglify plugin
 const TerserPlugin = require('terser-webpack-plugin');
+const merge = require('webpack-merge');
+const common = require('./webpack.config.js');
 
 // some libraries look for process.env.NODE_ENV to optimize and webpack doesn't include it
 const environmentPlugin = new webpack.DefinePlugin({

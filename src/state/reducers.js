@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+import entitySampleState from './entity-sample';
 
 const ownReducers = {};
 
@@ -6,6 +7,7 @@ const appReducer = combineReducers({
   //...ownReducers,
   // add here your reducers after importing the entity state
   // i.e: myStuff: myStuff.reducer, etc...
+  entitySample: entitySampleState.reducer,
 });
 
 /**
@@ -14,6 +16,7 @@ const appReducer = combineReducers({
  *
  * @param state
  * @param action
+ *
  * @returns {any}
  */
 const rootReducer = (state, action) => {
