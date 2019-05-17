@@ -11,7 +11,10 @@
   "scripts": {
     "build:prod": "node --max_old_space_size=2048 node_modules/.bin/webpack -p --config config/webpack.prod.js",
     "build:dev": "webpack-dev-server --display-error-details --open --config config/webpack.dev.js --hot --inline",
-    "tests:unit": "jest --setupTestFrameworkScriptFile"
+    "tests:unit": "jest --setupTestFrameworkScriptFile",
+    "i18n-add-locale": "lingui add-locale",
+    "i18n-extract": "lingui extract",
+    "i18n-compile": "lingui compile"
   },
   "repository": {
     "type": "git",
@@ -113,10 +116,14 @@
     "@babel/polyfill": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
     "@babel/preset-react": "^7.0.0",
+    "@hot-loader/react-dom": "^16.8.6",
+    "@lingui/cli": "^2.8.0",
+    "@lingui/macro": "^2.8.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.7.1",
     "babel-loader": "^8.0.5",
+    "babel-plugin-macros": "^2.5.1",
     "clean-webpack-plugin": "^2.0.1",
     "css-loader": "^2.1.1",
     "enzyme": "^3.9.0",
@@ -124,6 +131,7 @@
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-import-resolver-webpack": "^0.11.1",
+    "eslint-plugin-import": "^2.17.2",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4",
     "html-webpack-plugin": "^3.2.0",
@@ -144,6 +152,7 @@
     "webpack-merge": "^4.2.1"
   },
   "dependencies": {
+    "@lingui/react": "^2.8.0",
     "immutable": "^4.0.0-rc.12",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
