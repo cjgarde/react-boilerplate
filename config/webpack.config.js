@@ -74,7 +74,7 @@ module.exports = {
             loader: 'css-loader',
             options: {
               importLoaders: 3,
-              modules: true,
+              modules: 'global',
               // to configure the generated identification: [name of the component]_[name of class/id]_[random unique hash]
               localIdentName: '[name]_[local]_[hash:base64]',
               sourceMap: process.env.NODE_ENV !== 'production',
